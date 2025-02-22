@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS untuk menyembunyikan semua halaman kecuali Home */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out; /* Animasi fadeIn */
+        }
+        #home {
+            display: block;
+        }
+
+        /* Animasi fadeIn */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* CSS untuk daftar skill */
+        .skills-list {
+            list-style-type: none; /* Menghilangkan bullet point */
+            padding: 0;
+        }
+        .skills-list li {
+            background-color: #f4f4f4;
+            margin: 10px 0; /* Jarak antar skill */
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            display: block; /* Pastikan setiap skill ditampilkan dalam baris terpisah */
+        }
+
+        /* CSS untuk latar belakang */
+        body {
+            background-image: url('https://plus.unsplash.com/premium_photo-1714618831065-8e8dadd8d3df?q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Gambar default untuk Home */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            transition: background-image 0.5s ease-in-out; /* Animasi transisi latar belakang */
+        }
+
+        .main {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0); /* Menghilangkan transparansi */
+        }
+
+        .info {
+            background-color: rgba(255, 255, 255, 0.8); /* Memberikan transparansi pada konten */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* CSS untuk warna teks darkblue */
+        #home h3, #home h1, #about h1, #about p, #portfolio h1, #portfolio p, #contact h1, #contact p, #skills h1 {
+            color: darkblue;
+        }
+
+        /* Gaya khusus untuk "My Resume" */
+        #resume h1 {
+            color: darkblue !important; /* Pastikan warna darkblue */
+        }
+
+        /* CSS untuk daftar proyek di halaman Portfolio */
+        #portfolio ul {
+            list-style-type: none; /* Menghilangkan bullet point */
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap; /* Membuat proyek berjajar dari kiri ke kanan */
+            justify-content: space-between; /* Menyusun proyek dengan jarak yang merata */
+            gap: 15px; /* Jarak antar proyek */
+            margin-top: 20px;
+        }
+
+        #portfolio ul li {
+            background-color: rgba(255, 204, 0, 0.8); /* Warna kuning transparan */
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            width: calc(25% - 15px); /* Lebar seragam untuk 4 proyek per baris */
+            text-align: center;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.5s ease-in-out;
+            transition: background-color 0.3s ease-in-out, transform 0.2s;
+            color: black; /* Warna teks hitam agar mudah dibaca */
+            font-weight: bold;
+        }
+
+        #portfolio ul li:hover {
+            background-color: #ff9900; /* Warna kuning lebih terang saat hover */
+            transform: scale(1.05);
+        }
+
+        /* Animasi muncul dari bawah */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* CSS untuk halaman Contact */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Jarak antar item */
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            background-color: rgba(255, 255, 255, 0.9); /* Latar belakang transparan */
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contact-item h3 {
+            color: darkblue;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .contact-item p {
+            color: #333;
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        .contact-item a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <!-- Navbar -->
+        <div class="navbar">
+            <ul>
+                <li><a href="#home" onclick="showPage('home'); return false;">HOME</a></li>
+                <li><a href="#about" onclick="showPage('about'); return false;">ABOUT</a></li>
+                <li><a href="#skills" onclick="showPage('skills'); return false;">SKILLS</a></li>
+                <li><a href="#resume" onclick="showPage('resume'); return false;">RESUME</a></li>
+                <li><a href="#portfolio" onclick="showPage('portfolio'); return false;">PORTFOLIO</a></li>
+                <li><a href="#contact" onclick="showPage('contact'); return false;">CONTACT</a></li>
+            </ul>
+        </div>
+
+        <!-- Halaman Home -->
+        <div id="home" class="page">
+            <div class="info">
+                <h3>Hi, I'm Reinaldi Ragasa.</h3>
+                <h1>DATA SCIENTIST</h1>
+                <h3>Data Scientist from Jakarta, Indonesia. I create <br> websites to analyze data.</h3>
+            </div>
+        </div>
+
+        <!-- Halaman About -->
+        <div id="about" class="page">
+            <div class="info">
+                <h1>About Me</h1>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            Hi, I'm Reinaldi Ragasa, a Data Scientist based in Jakarta, Indonesia.
+                            I specialize in analyzing data and creating insights to help businesses make better decisions.
+                            I have experience in Python, Machine Learning, SQL, and Data Visualization.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://i.imgur.com/QlQV4Rm.png" alt="Reinaldi Ragasa">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Halaman Skills -->
+        <div id="skills" class="page">
+            <div class="info">
+                <h1>My Skills</h1>
+                <ul class="skills-list">
+                    <li>Python</li>
+                    <li>Data Analysis</li>
+                    <li>Machine Learning</li>
+                    <li>SQL</li>
+                    <li>RFM Analysis</li>
+                    <li>Cohort Analysis</li>
+                    <li>Forecast Time Series</li>
+                    <li>Text Mining</li>
+                    <li>Deep Learning</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Halaman Resume -->
+        <div id="resume" class="page">
+            <div class="info">
+                <h1>My Resume</h1>
+                <div class="resume-container">
+                    <!-- Bagian Experience dan Education di sebelah kiri -->
+                    <div class="left-column">
+                        <div class="experience">
+                            <h2>Experience</h2>
+                            <ul>
+                                <li>
+                                    <h3>Purwadhika Digital Technology School</h3>
+                                    <p><strong>Oct 2024 - Present</strong></p>
+                                    <ul>
+                                        <li>Studied Python programming, data analysis, data visualization, and machine learning using advanced tools like VSCode, MySQL, Jupyter Notebook, Tableau, Looker Studio, and Google Colab.</li>
+                                        <li>Worked on practical data projects focused on use case analysis for various business stakeholders, including oil and gas industry, Transjakarta and real estate business.</li>
+                                        <li>Leveraged techniques like cohort retention analysis and RFM segmentation to extract meaningful insights, enabling data-driven strategies and informed decision-making.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Bagian Education -->
+                        <div class="education">
+                            <h2>Education</h2>
+                            <ul>
+                                <li>
+                                    <h3>University of Nottingham Malaysia</h3>
+                                    <p><strong>Master of Business School</strong></p>
+                                    <p><strong>GPA: 3.25/4.00</strong></p>
+                                    <p><strong>Sep 2021 - July 2023</strong></p>
+                                    <ul>
+                                        <li>Strategic Management – Learnt how to design, implement, and evaluate business strategies to achieve competitive advantage.</li>
+                                        <li>Finance and Accounting – Understood financial statements, investment analysis, risk management, and data-driven decision-making.</li>
+                                        <li>Leadership and Human Resource Management – Developed skills to manage teams, enhance employee productivity, and understand organizational dynamics and workplace culture.</li>
+                                        <li>Thesis topic: “Roles and Impact of Strategic Leadership Management to Resolve Risk Projects: Case Study on an Oil and Gas Projects in Indonesia”</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h3>University of Aberdeen</h3>
+                                    <p><strong>MSc of Petroleum Engineering</strong></p>
+                                    <p><strong>GPA: 3.57/4.00</strong></p>
+                                    <p><strong>Sep 2021 - July 2023</strong></p>
+                                    <ul>
+                                        <li>Advanced Reservoir Engineering – Understanding reservoir behavior, enhanced oil recovery (EOR) methods, and reservoir simulation techniques.</li>
+                                        <li>Drilling and Well Engineering – Studying well design, drilling operations, casing and cementing, and advanced well control techniques.</li>
+                                        <li>Production Optimization and Asset Management – Learning how to maximize hydrocarbon recovery, manage production facilities, and apply digital technologies in field operations.</li>
+                                        <li>Thesis topic: “The Effect of Silica Nanoparticles on Rheological and Filtration Properties of Emulsion Based Mud”(A5).</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h3>Universitas Trisakti</h3>
+                                    <p><strong>BSc of Petroleum Engineering</strong></p>
+                                    <p><strong>GPA: 3.17/4.00</strong></p>
+                                    <p><strong>Sep 2011 - Oct 2015</strong></p>
+                                    <ul>
+                                        <li>Reservoir Engineering – Learning about fluid flow in porous media, reservoir characterization, and basic enhanced oil recovery (EOR) techniques.</li>
+                                        <li>Drilling Engineering – Studying drilling technology, well planning, mud engineering, casing, and cementing.</li>
+                                        <li>Production Engineering – Understanding surface facilities, artificial lift methods, and techniques to optimize oil & gas production.</li>
+                                        <li>Thesis topic: “Evaluation and Redesign of Electric Submersible Pumps at Pascal Field” (A-)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Bagian Work Experience di sebelah kanan -->
+                    <div class="work-experience">
+                        <h2>Work Experience</h2>
+                        <ul>
+                            <li>
+                                <h3>PT. Surveyor Indonesia</h3>
+                                <p><strong>Quality Engineer</strong></p>
+                                <p><strong>Feb 2020 - May 2021</strong></p>
+                                <ul>
+                                    <li>Efficiently and effectively managed quality system for the project with project team, prepare and develop required procedures and reporting.</li>
+                                    <li>Led man power, made a planning, managed people and budgeting for inspection work, direction, coordinating and control of Shop quality surveillance / inspection and quality assurance services activities.</li>
+                                    <li>Worked with the QA/QC Coordinators to coordinate surveillance of Inspector Contractor’s supplier management and shop inspection & expediting and documentation of inspection and test activities as specified in approved inspection and test plans.</li>
+                                    <li>Carried out site visit / met with local fabricators, engineering & procurement team to discuss about quality, engineering and expediting/ progress issues every 2 weeks.</li>
+                                    <li>Represented company in the inspection and release of engineered equipment (if required).</li>
+                                    <li>Updated Weekly Summary Inspection of Equipment Fabrication & highlighted issues input to project reports.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3>PT. Fluid Science Dynamics Indonesia</h3>
+                                <p><strong>Application Engineer</strong></p>
+                                <p><strong>Apr 2019 - Jan 2020</strong></p>
+                                <ul>
+                                    <li>Coordinated, managed and prepared technical document for Bidding of dry gas seal, mechanical seal and various pumps equipment (mainly PCP pumps) at PSC (Production Sharing Company) Projects.</li>
+                                    <li>Coordinated and supported Project Team for technical Bidding especially; Progressive Cavity Pump (PCP) Pumps at PSC (Production Sharing Company) Projects.</li>
+                                    <li>Involved with Project Team for Rod Pumping Madagascar Project, Progressive Cavity Pump (PCP) Flexon All Trial Project for PT. SPR Langgak, Sucker Rod, Plunger and Tubing Scanning Project for PHE Siak Kampar and Joint work with PHE-WMO Team for Project in Pertamina Hulu Energi (PHE) using Multi Phase Pump (MPP) Technology.</li>
+                                    <li>Carried out site visit / met with local fabricators, engineering & procurement team to discuss about quality, engineering and expediting/ progress issues every 2 weeks.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Halaman Portfolio -->
+        <div id="portfolio" class="page">
+            <div class="info">
+                <h1>My Portfolio</h1>
+                <p>Here are some of my projects:</p>
+                <ul class="portfolio-list">
+                    <li>
+                        <a href="project1.html" class="project-link">
+                            <img src="https://findingtom.com/images/uploads/what-is-medium-com/article-image-00.jpeg" alt="Project 1 - Medium Article">
+                            <span>Project 1 - Medium Article</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="project2.html" class="project-link">
+                            <img src="https://www.udacity.com/blog/wp-content/uploads/2020/12/Python-Tutorial_Blog-scaled.jpeg" alt="Project 2 - Python Programming">
+                            <span>Project 2 - CRUD for Oil and Gas Exploration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="project3.html" class="project-link">
+                            <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/What_is_Data_Analysis.jpg" alt="Project 3 - Data Analysis">
+                            <span>Project 3 - Transjakarta Data Analysis</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="project4.html" class="project-link">
+                            <img src="https://blog.algorit.ma/content/images/2022/07/Screenshot-2022-07-21-134710.png" alt="Project 4 - Customer Segmentation Analysis">
+                            <span>Project 4 - Customer Segmentation Analysis</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="project5.html" class="project-link">
+                            <img src="https://clevertap.com/wp-content/uploads/2024/03/Cohort-Analysis-Chart-.png?w=1464" alt="Project 5 - Customer Cohort Retention Analysis">
+                            <span>Project 5 - Customer Cohort Retention Analysis</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="project6.html" class="project-link">
+                            <img src="https://www.zohowebstatic.com/sites/zweb/images/analytics/zaimages/forecast_-_general_image.png" alt="Project 6 - GGRM Stock Price Trend Prediction Analysis">
+                            <span>Project 6 - GGRM Stock Price Trend Prediction Analysis</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="project7.html" class="project-link">
+                            <img src="https://resilienteducator.com/wp-content/uploads/2015/09/Revising-With-Pictures-How-Word-Clouds-Help-Students-Become-Better-Writers.jpg" alt="Project 7 - Sentiment Analysis of Grab Reviews">
+                            <span>Project 7 - Sentiment Analysis of Grab Reviews</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="project8.html" class="project-link">
+                            <img src="https://designindc.com/wp-content/uploads/2022/12/Machine-Learning.jpg" alt="Project 8 - Machine Learning">
+                            <span>Project 8 - Machine Learning</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Halaman Contact -->
+        <div id="contact" class="page">
+            <div class="info">
+                <h1>Contact Me</h1>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Address</h3>
+                        <p>Jakarta, Indonesia</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Call Me</h3>
+                        <p>+62 812 8653 9325</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Email Me</h3>
+                        <p><a href="mailto:reinaldi.ragasa.2006@gmail.com">reinaldi.ragasa.2006@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Fungsi untuk menampilkan halaman yang dipilih
+            function showPage(pageId) {
+                // Sembunyikan semua halaman
+                const pages = document.querySelectorAll('.page');
+                pages.forEach(page => {
+                    page.style.display = 'none';
+                });
+
+                // Tampilkan halaman yang dipilih
+                const selectedPage = document.getElementById(pageId);
+                if (selectedPage) {
+                    selectedPage.style.display = 'block';
+                }
+
+                // Scroll ke atas halaman
+                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll ke atas dengan animasi
+
+                // Ubah latar belakang berdasarkan halaman yang dipilih
+                if (pageId === 'portfolio') {
+                    document.body.style.backgroundImage = "url('https://media.istockphoto.com/id/1418693529/photo/businessman-typing-on-tablet-computer-economy-data-financial-investment-stock-exchange-market.webp?a=1&b=1&s=612x612&w=0&k=20&c=OTl8tim5vx2CEP7TG2EHd5hFqncT4I6hJu8fZGvtyEY=')";
+                } else if (pageId === 'home') {
+                    document.body.style.backgroundImage = "url('https://plus.unsplash.com/premium_photo-1714618831065-8e8dadd8d3df?q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
+                } else if (pageId === 'skills') {
+                    document.body.style.backgroundImage = "url('https://i.imgur.com/pVEwxXJ.png')"; // Gambar khusus untuk halaman Skills
+                } else if (pageId === 'contact') {
+                    document.body.style.backgroundImage = "url('https://cxcentral.com.au/wp-content/uploads/2016/03/Using-Data-Science-to-boost-sales-conversions-in-the-call-centre-678x356.jpg')"; // Gambar khusus untuk halaman Contact
+                } else if (pageId === 'resume') {
+                    document.body.style.backgroundImage = "url('https://www.simplilearn.com/ice9/free_resources_article_thumb/Data-Science-vs.-Big-Data-vs.jpg')"; // Gambar khusus untuk halaman Resume
+                } else {
+                    document.body.style.backgroundImage = "url('https://plus.unsplash.com/premium_photo-1661878265739-da90bc1af051?q=80&w=1986&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
+                }
+            }
+
+            // Fungsi untuk memeriksa hash dan menampilkan halaman yang sesuai
+            function checkHash() {
+                const hash = window.location.hash.substring(1); // Ambil hash tanpa tanda #
+                if (hash) {
+                    showPage(hash); // Tampilkan halaman sesuai hash
+                } else {
+                    showPage('home'); // Default ke home jika tidak ada hash
+                }
+            }
+
+            // Jalankan fungsi checkHash saat halaman dimuat dan saat hash berubah
+            window.addEventListener('DOMContentLoaded', checkHash);
+            window.addEventListener('hashchange', checkHash);
+
+            // Set latar belakang default saat halaman pertama kali diluncurkan
+            document.addEventListener('DOMContentLoaded', function () {
+                document.body.style.backgroundImage = "url('https://plus.unsplash.com/premium_photo-1714618831065-8e8dadd8d3df?q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
+            });
+        </script>
+    </div>
+</body>
+</html>

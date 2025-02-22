@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 5 - Customer Cohort Retention Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.imgur.com/uLNLWmO.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #ffcc00;
+            color: #333;
+        }
+
+        .project-detail {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .project-content {
+            flex: 2;
+        }
+
+        .project-info {
+            flex: 1;
+            background-color: rgba(249, 249, 249, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-detail h1 {
+            color: darkblue;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .project-detail p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .project-info h2 {
+            color: darkblue;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .project-info p {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        .project-info a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-info a:hover {
+            text-decoration: underline;
+        }
+
+        .project-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .page {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @media screen and (max-width: 768px) {
+            .project-detail {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .project-info {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html#home">HOME</a></li>
+            <li><a href="index.html#about">ABOUT</a></li>
+            <li><a href="index.html#skills">SKILLS</a></li>
+            <li><a href="index.html#resume">RESUME</a></li>
+            <li><a href="index.html#portfolio">PORTFOLIO</a></li>
+            <li><a href="index.html#contact">CONTACT</a></li>
+        </ul>
+    </div>
+
+    <div class="project-detail page">
+        <!-- Gambar ditambahkan di sini -->
+        <img src="https://i.imgur.com/oKB4c7m.png" alt="Project Image" class="project-image">
+        <div class="project-content">
+            <h1>Customer Cohort Retention Analysis</h1>
+            <p>
+                This project aims to analyze customer cohorts to understand their behavior, retention, and lifetime value. It will identify trends based on purchase patterns, engagement, and demographics to optimize marketing strategies. The insights will help improve customer retention and maximize business growth. 
+            </p>
+        </div>
+        <div class="project-info">
+            <h2>Project Information</h2>
+            <p><strong>CATEGORY</strong></p>
+            <p>Cohort Retention Analysis</p>
+            <p><strong>PROJECT DATE</strong></p>
+            <p>13 January, 2025</p>
+            <p><strong>Link to Project Notebook</strong></p>
+            <p><a href="https://github.com/reinaldiragasa/Cohort-Retention-Analysis" target="_blank">Project Notebook</a></p>
+            <p><strong>Link to Project Presentation</strong></p>
+            <p><a href="https://www.canva.com/design/DAGfrU-2zZg/W62PP9BahbbsQKKTcFxmNw/edit?utm_content=DAGfrU-2zZg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Project Presentation</a></p>
+        </div>
+    </div>
+</body>
+</html>

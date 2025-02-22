@@ -1,0 +1,396 @@
+/* Tambahkan Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #333;
+  color: white;
+}
+
+/* Section Utama */
+.main {
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  color: white;
+  padding-left: 10px; /* Kurangi padding kiri */
+  padding-right: 10px; /* Kurangi padding kanan */
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  position: sticky; /* Membuat navbar tetap di atas saat scroll */
+  top: 0; /* Posisi navbar di bagian atas */
+  background-color: rgba(51, 51, 51, 0.9); /* Warna latar belakang navbar */
+  z-index: 1000; /* Memastikan navbar selalu di atas elemen lain */
+}
+
+.navbar ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+  color: #ffcc00;
+  border-bottom: 2px solid #ffcc00;
+}
+
+/* Animasi teks */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info {
+  margin-left: 5%; /* Sesuaikan margin kiri */
+  margin-right: 5%; /* Sesuaikan margin kanan */
+  margin-top: 10%;
+  animation: fadeIn 1.5s ease-in-out;
+  max-width: 90%; /* Batasi lebar maksimum kotak putih */
+  width: auto; /* Lebar menyesuaikan konten */
+  padding: 20px; /* Padding dalam kotak */
+  background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang kotak */
+  border-radius: 10px; /* Sudut melengkung */
+}
+
+.info h3 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 26px;
+}
+
+/* About Section */
+.about-content {
+  display: flex;
+  gap: 40px; /* Jarak antara teks dan gambar */
+  align-items: flex-start; /* Menyelaraskan elemen ke atas */
+}
+
+.about-text {
+  flex: 1; /* Mengisi ruang yang tersedia di sebelah kiri */
+  max-width: 60%; /* Batasi lebar teks */
+}
+
+.about-image {
+  flex: 1; /* Mengisi ruang yang tersedia di sebelah kanan */
+  max-width: 40%; /* Batasi lebar gambar */
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Tambahkan border-radius untuk gambar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambahkan shadow */
+}
+
+/* Skill Section */
+#skills {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.skills-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.skills-list li {
+  background-color: rgba(255, 204, 0, 0.8);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.2em;
+  width: 250px;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.5s ease-in-out;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+  color: black;
+  font-weight: bold;
+}
+
+.skills-list li:hover {
+  background-color: #ff9900;
+  transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .info {
+    text-align: center;
+    margin-left: 0; /* Hilangkan margin-left pada layar kecil */
+    margin-right: 0; /* Hilangkan margin-right pada layar kecil */
+    max-width: 100%; /* Lebar penuh pada layar kecil */
+  }
+  .skills-list {
+    justify-content: center;
+  }
+
+  .about-content {
+    flex-direction: column; /* Susun vertikal pada layar kecil */
+  }
+
+  .about-text, .about-image {
+    max-width: 100%; /* Lebar penuh pada layar kecil */
+  }
+
+  .about-image {
+    order: -1; /* Gambar di atas teks pada layar kecil */
+  }
+}
+
+/* CSS untuk Resume */
+.resume-container {
+  display: flex;
+  gap: 40px; /* Jarak antara kolom kiri dan kanan */
+  padding: 20px;
+}
+
+.left-column {
+  flex: 1; /* Mengisi ruang yang tersedia di sebelah kiri */
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Jarak antara Experience dan Education */
+}
+
+.work-experience {
+  flex: 1; /* Mengisi ruang yang tersedia di sebelah kanan */
+}
+
+.experience, .work-experience, .education {
+  width: 100%; /* Mengatur lebar penuh untuk setiap section */
+}
+
+.experience h2, .work-experience h2, .education h2 {
+  color: darkblue;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.experience ul, .work-experience ul, .education ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.experience li, .work-experience li, .education li {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.experience h3, .work-experience h3, .education h3 {
+  color: darkblue;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.experience p, .work-experience p, .education p {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.experience ul ul, .work-experience ul ul, .education ul ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.experience ul ul li, .work-experience ul ul li, .education ul ul li {
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Responsive Adjustments for Resume */
+@media screen and (max-width: 768px) {
+  .resume-container {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .left-column, .work-experience {
+      width: 100%;
+  }
+}
+
+/* CSS untuk Portfolio */
+.portfolio-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Membuat proyek berjajar dari kiri ke kanan */
+  justify-content: space-between; /* Menyusun proyek dengan jarak yang merata */
+  gap: 15px; /* Jarak antar proyek */
+  margin-top: 20px;
+}
+
+.portfolio-list li {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  width: calc(25% - 15px); /* Lebar seragam untuk 4 proyek per baris */
+  text-align: center;
+}
+
+.portfolio-list li:hover {
+  transform: scale(1.05);
+}
+
+.portfolio-list a {
+  text-decoration: none;
+  color: darkblue;
+  display: block;
+}
+
+.portfolio-list img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.portfolio-list span {
+  font-size: 1.2em;
+  font-weight: bold;
+  display: block;
+}
+
+/* Responsive Adjustments for Portfolio */
+@media screen and (max-width: 768px) {
+  .portfolio-list li {
+      width: calc(50% - 15px); /* 2 proyek per baris pada layar kecil */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .portfolio-list li {
+      width: 100%; /* 1 proyek per baris pada layar sangat kecil */
+  }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.project-detail {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 40px;
+}
+
+.project-content {
+  flex: 2;
+}
+
+.project-info {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-detail h1 {
+  color: darkblue;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.project-detail p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.project-info h2 {
+  color: darkblue;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.project-info p {
+  font-size: 1em;
+  margin: 10px 0;
+}
+
+.project-info a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-info a:hover {
+  text-decoration: underline;
+}
+
+/* Animasi fadeOut */
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Animasi fadeIn */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page {
+  animation: fadeIn 0.5s ease-in-out;
+}
